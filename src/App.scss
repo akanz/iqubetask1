@@ -1,0 +1,298 @@
+$blue: #2f2679;
+$primary: #2f80ed;
+$gray: lightgray;
+$darkgray: #6d6e71;
+$orange: #f2994a;
+$pale: #817e9e;
+
+body {
+    background: {
+        image: url('./img/bg.jpg');
+        repeat: no-repeat;
+    }
+}
+
+@mixin form {
+    height: 50px;
+    width: 96%;
+    font-size: 1.2rem;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border: 2px solid lightgray;
+    border: {
+        radius: 10px;
+    }
+}
+@mixin button {
+    outline: 0;
+    padding: 15px 70px;
+    color: white;
+    text-decoration: none;
+    transition: 0.4s;
+    border: 0;
+    border: {
+        radius: 10px;
+    }
+    font: {
+        size: 20px;
+        weight: 500;
+    };
+}
+@mixin flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+@mixin flexcon {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5em 2.5em;
+    align-items: center;
+}
+
+.container {
+    width: 60%;
+    margin: 5em auto 0;
+    box-sizing: border-box;
+    padding: 20px;
+    .header {
+        color: $blue;
+        margin: 20px 0;
+        font : {
+            size: 40px;
+            weight: 600;
+        }
+    }
+    .menu {
+        color: darkgray;
+        margin: 1.5em 0;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        border: {
+            bottom: 1px solid black;
+        }
+        font: {
+            size: 22px;
+            weight: 500;
+        }
+        .tab {
+            padding: 20px 0;
+            width: 33.33%;
+            transform: translateY(5px);
+        }
+        .two {
+            width: 30%;
+        }
+        .three {
+            text-align: right;
+        }
+        .active {
+            color: $orange;
+            transform: translateY(20px);
+            border: {
+                bottom:  10px solid $orange;
+                radius: 10px;
+            }
+        }
+    }
+    .body {
+        .form-group {
+            margin: 3em 0;
+            label {
+                span {
+                    color: red;
+                }
+                font: {
+                    size: 18px;
+                    weight: 500;
+                    
+                }
+            }
+            input {
+                @include form;
+            }
+            select {
+                @include form;
+                width: 100%;
+                height: 60px;
+            }
+            .one {
+                width: 60%;
+            }
+            .two {
+                width: 40%;
+            }
+            .three {
+                width: 45%;
+            }
+            .four {
+                width: 25%;
+            }
+            .five {
+                width: 20%;
+            }
+        }
+        .flex-one {
+            @include flexbox;
+            input {
+                width: 80%;
+            }
+            
+        }
+        .flex-two {
+            @include flexbox;
+            input {
+                width: 80%;
+            }
+        }
+        .btn {
+            display: flex;
+        }
+        .b1 {
+            @include button;
+            background: linear-gradient(to top, #f2694c 0%, #f2994a 100%);
+        }
+        .b1:hover {
+            background-color: #d49527;
+            
+        }
+        .b2 {
+            @include button;
+            background-color: transparent;
+            color: $blue;
+        }
+        .b2:hover {
+            color: black;
+        }
+        
+    }
+}
+
+.confainer {
+    width: 60%;
+    background-color: white;
+    margin: 12em auto;
+    
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    text: {
+        align: left;
+    }
+    border: {
+        radius: 10px;
+    }
+    .body {
+        width: 60%;
+        margin: 0 auto;
+        padding: 5em;
+        .img {
+            width: 50px;
+            margin: 0 auto 20px;
+            padding: 20px;
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            border-radius: 50%;
+        }
+        .title {
+            color: $blue;
+            margin: 20px 0;
+            font: {
+                size: 35px;
+                weight: bold;
+            }
+        }
+        .det {
+            margin: 30px 0;
+            color: $darkgray;
+            font: {
+                size: 20px;
+                weight: 500;
+            }
+        }
+        .link {
+            color: $orange;
+            font: {
+                size: 20px;
+            };
+        }
+    }
+}
+
+.confainer2 {
+    margin: 3.5em auto;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    font-size: 20px;
+    background-color: white;
+    .header {
+        @include flexcon;
+        background-color: $primary;
+        color: white;
+        padding: 20px 3.5em;
+        border: {
+            top-left-radius: 15px;
+            top-right-radius: 15px;
+        }
+        font: {
+            size: 20px;
+            weight: 400;
+        };
+        .left {
+            text-align: left;
+            width: 50%;
+        }
+        .right {
+            text-align: right;
+            width: 50%;
+        }
+    }
+    .main {
+        padding: 0 25px;
+    }
+    .flex-group {
+        @include flexcon;
+        
+        font: {
+            weight: 500;
+        }
+        color: midnightblue;
+        .left {
+            text-align: left;
+            width: 60%;
+        }
+        .right {
+            text-align: right;
+            width: 40%;
+            span {
+                color: black;
+            }
+        }
+    }
+    .footer {
+        border: {
+            top: 1px solid darkgray;
+        };
+        padding: 1.5em 2em;
+        .flex-group {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid darkgray;
+        }
+        .left {
+            color: $darkgray;
+        }
+        .desc {
+            color: midnightblue;
+            padding: 10px;
+            border: {
+                radius: 5px;
+            }
+        }
+
+    }
+    border: {
+        radius: 15px;
+    }
+}
+
+.btn {
+    text-transform: capitalize;
+}
